@@ -1,1 +1,12 @@
-<div></div>
+<section class="container" [ngClass]="{'isList': isList}">
+  <div [ngClass]="{'title': !isList, 'second': isList}">
+    <p (click)="onToggle(false)">
+      Formulario
+    </p>
+  </div>
+  <div [ngClass]="{'title': isList, 'second': !isList}">
+    <p (click)="onToggle(true)">
+      Lista de usuarios
+    </p>
+  </div>
+</section>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-toggle',
@@ -7,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderToggleComponent implements OnInit {
 
-  constructor()
+  public isList: boolean = false;
+
+  constructor(private readonly router: Router)
   { }
 
   public ngOnInit(): void
-  {}
+  {
+    this.isList = location.pathname === '/users-list';
+  }
+
+  public onToggle(value: boolean): void
+  {
+    if(value === this.isList) return;
+    this.isList = !this.isList;
+    this.router.navigateByUrl(value ? '/users-list' : '' );
+  }
 
 }
