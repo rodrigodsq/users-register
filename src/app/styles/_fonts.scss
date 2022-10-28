@@ -1,0 +1,42 @@
+$current-font-family: 'Inter';
+
+@mixin font
+{
+    font-family: $current-font-family, sans-serif;
+}
+
+@mixin font-light
+{
+    @include font;
+    font-weight: 300;
+}
+
+@mixin font-regular
+{
+    @include font;
+    font-weight: 400;
+}
+
+@mixin font-medium
+{
+    @include font;
+    font-weight: 500;
+}
+
+@mixin font-semi-bold
+{
+    @include font;
+    font-weight: 600;
+}
+
+@mixin font-bold
+{
+    @include font;
+    font-weight: 700;
+}
+
+@mixin font-extra-bold
+{
+    @include font;
+    font-weight: 800;
+}
