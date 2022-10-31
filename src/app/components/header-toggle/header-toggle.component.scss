@@ -1,13 +1,14 @@
 @import "../../styles/fonts";
 @import "../../styles/colors";
 @import "../../styles/theme";
-
+@import "../../styles/breakpoints";
 
 .container
 {
-  margin: 40px 0px 50px;
+  margin: 50px 0px;
   @include base-flex(row, center, center, nowrap);
   transition: 1s;
+  position: relative;
 }
 
 .isList
@@ -17,28 +18,26 @@
 
 .title
 {
-  flex-grow: 3;
   @include base-flex(row, flex-end, center, nowrap);
 
   p
   {
     transition: 0.5s;
     @include font-bold;
-    font-size: 45px;
+    font-size: 50px;
     color: $primary-black;
   }
 }
 
 .second
 {
-  flex-grow: 2.5;
+  position: absolute;
 
   p
   {
     @include font-regular;
     font-size: 15px;
     transition: 0.5s;
-    margin-left: 20px;
     margin-top: 10px;
     color: $primary-black;
     opacity: 30%;
@@ -53,4 +52,14 @@
       opacity: 70%;
     }
   }
+}
+
+.to-right
+{
+  right: 5%;
+}
+
+.to-left
+{
+  left: 5%;
 }

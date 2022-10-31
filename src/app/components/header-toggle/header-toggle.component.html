@@ -1,12 +1,14 @@
 <section class="container" [ngClass]="{'isList': isList}">
-  <div [ngClass]="{'title': !isList, 'second': isList}">
+  <div [ngClass]="{'title': !isList, 'second to-left': isList}">
     <p (click)="onToggle(false)">
+      {{isList ? '🡨' : ''}}
       Formulario
     </p>
   </div>
-  <div [ngClass]="{'title': isList, 'second': !isList}">
+  <div [ngClass]="{'title': isList, 'second to-right': !isList}">
     <p (click)="onToggle(true)">
       Lista de usuarios
+      {{isList ? '' : '🡪'}}
     </p>
   </div>
 </section>

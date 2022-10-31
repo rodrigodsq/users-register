@@ -1,1 +1,58 @@
-<p>user-form works!</p>
+<section class="container">
+  <form [formGroup]="form">
+    <div class="label-float">
+      <input
+        formControlName="name"
+        [ngClass]="{'invalid': displayErrors?.['name']}"
+        placeholder=" "/>
+      <label>Nome completo (sem abreviações) </label>
+      <span *ngIf="displayErrors?.['name']">
+        {{ displayErrors?.['name'] }}
+      </span>
+    </div>
+
+    <div class="label-float">
+      <input
+        formControlName="cpf"
+        [ngClass]="{'invalid': displayErrors?.['cpf']}"
+        mask="000.000.000-00"
+        placeholder=" "/>
+      <label>CPF</label>
+      <span *ngIf="displayErrors?.['cpf']">
+        {{ displayErrors?.['cpf'] }}
+      </span>
+    </div>
+
+    <div class="label-float">
+      <input
+        formControlName="phone"
+        [ngClass]="{'invalid': displayErrors?.['phone']}"
+        mask="(00) 0 0000-0000"
+        placeholder=" "/>
+      <label>Telefone</label>
+      <span *ngIf="displayErrors?.['phone']">
+        {{ displayErrors?.['phone'] }}
+      </span>
+    </div>
+
+    <div class="label-float">
+      <input
+        formControlName="email"
+        [ngClass]="{'invalid': displayErrors?.['email']}"
+        placeholder=" "/>
+      <label>Email</label>
+      <span *ngIf="displayErrors?.['email']">
+        {{ displayErrors?.['email'] }}
+      </span>
+    </div>
+
+    <button
+      class="btn"
+      [disabled]="form.invalid"
+      [ngClass]="{'btn-active': form.valid}"
+      (click)="handleButton()">
+      <div *ngIf="loading" class="loader"></div>
+      <p *ngIf="!loading">Cadastrar</p>
+    </button>
+  </form>
+</section>

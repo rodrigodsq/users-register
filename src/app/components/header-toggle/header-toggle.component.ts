@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-toggle',
@@ -15,7 +15,13 @@ export class HeaderToggleComponent implements OnInit {
 
   public ngOnInit(): void
   {
-    this.isList = location.pathname === '/users-list';
+    this.router.events.subscribe(event =>
+    {
+      if (event instanceof NavigationEnd)
+      {
+        this,this.isList = event.url === '/users-list'
+      }
+    })
   }
 
   public onToggle(value: boolean): void
