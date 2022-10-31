@@ -2,12 +2,12 @@
   <div [ngClass]="{'title': !isList, 'second to-left': isList}">
     <p (click)="onToggle(false)">
       {{isList ? '🡨' : ''}}
-      Formulario
+      Formulário
     </p>
   </div>
   <div [ngClass]="{'title': isList, 'second to-right': !isList}">
     <p (click)="onToggle(true)">
-      Lista de usuarios
+      Lista de usuários
       {{isList ? '' : '🡪'}}
     </p>
   </div>

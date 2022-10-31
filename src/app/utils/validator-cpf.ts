@@ -2,7 +2,7 @@ import { AbstractControl, Validators } from '@angular/forms';
 
 export class ValidatorCpf
 {
-  static ValidatorCpf()
+  static validatorCpf()
   {
     return (control: AbstractControl): Validators | null =>
     {

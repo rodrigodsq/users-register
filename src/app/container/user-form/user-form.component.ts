@@ -17,7 +17,7 @@ export class UserFormComponent implements OnInit, AfterViewInit
 
   public form: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    cpf: new FormControl('', [Validators.required, ValidatorCpf.ValidatorCpf()]),
+    cpf: new FormControl('', [Validators.required, ValidatorCpf.validatorCpf()]),
     phone: new FormControl('', [Validators.required, Validators.minLength(11)]),
     email: new FormControl('', [Validators.required, Validators.email])
   });

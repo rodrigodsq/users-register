@@ -19,7 +19,7 @@ export class HeaderToggleComponent implements OnInit {
     {
       if (event instanceof NavigationEnd)
       {
-        this,this.isList = event.url === '/users-list'
+        this.isList = event.url === '/users-list'
       }
     })
   }
