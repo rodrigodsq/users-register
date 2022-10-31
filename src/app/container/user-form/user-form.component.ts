@@ -31,9 +31,7 @@ export class UserFormComponent implements OnInit, AfterViewInit
 
   public ngOnInit(): void
   {
-    let users = localStorage.getItem('users')
-
-    if(users?.length)
+    if(localStorage.getItem('users'))
     {
       this.baseUsers.push(...JSON.parse(localStorage.getItem('users') || ''));
     }

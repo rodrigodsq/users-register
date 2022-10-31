@@ -1,0 +1,63 @@
+@import "../../styles/fonts";
+@import "../../styles/colors";
+@import "../../styles/theme";
+@import "../../styles/breakpoints";
+
+
+.container
+{
+  @include base-flex(row, center, center, wrap);
+}
+
+.card
+{
+  @include base-flex(column, center, flex-start, nowrap);
+  background-color: $white;
+  padding: 15px;
+  width: 250px;
+  margin: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  .col
+  {
+    @include base-flex(row, center, center, nowrap);
+    margin: 5px 0px;
+  }
+
+  span
+  {
+    @include font-bold;
+    font-size: 15px;
+    color: $primary-black;
+    margin-right: 5px;
+    white-space: nowrap;
+  }
+
+  p
+  {
+    @include font-medium;
+    width: 200px;
+    font-size: 13px;
+    color: $primary-black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+@include xs
+{
+  .card
+  {
+    span
+    {
+      font-size: 13px;
+    }
+
+    p
+    {
+      font-size: 11px;
+    }
+  }
+}
