@@ -63,3 +63,64 @@
 {
   left: 5%;
 }
+
+
+@include lg
+{
+  .title
+  {
+    p
+    {
+      font-size: 55px;
+    }
+  }
+
+  .second
+  {
+    p
+    {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  }
+}
+
+@include xm
+{
+  .title
+  {
+    p
+    {
+      font-size: 40px;
+    }
+  }
+
+  .second
+  {
+    p
+    {
+      font-size: 13px;
+    }
+  }
+}
+
+@include xs
+{
+
+  .title
+  {
+    p
+    {
+      font-size: 30px;
+    }
+  }
+
+  .second
+  {
+    top: -35px;
+    p
+    {
+      font-size: 10px;
+    }
+  }
+}
